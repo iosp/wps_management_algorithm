@@ -7,7 +7,7 @@
 #include "../AlgorithmSubSystem/algorithmsubsystem.h"
 
 
-//class AlgorithmSubSystem;
+class AlgorithmSubSystem;
 
 class MANAGEMENTALGORITHMSHARED_EXPORT ManagementAlgorithm
 {

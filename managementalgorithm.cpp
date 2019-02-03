@@ -41,12 +41,16 @@ int ManagementAlgorithm::Cons_StopSensorLocationReporting()
 
 int ManagementAlgorithm::ProcessSensorLocUpdate(Calculated_Sensor_Geo_Loc_Orient geo_loc_orient)
 {
+    std::cout<<"ManagementAlgorithm::ProcessSensorLocUpdate called with param:"<<geo_loc_orient<<std::endl;
     //Propagate data to whom is interested
+    return 0;
 }
 
 int ManagementAlgorithm::Cons_PrepareForModelConstruction(Region_Of_Mission rom, int required_model_quality)
 {
     int ret;
+    std::cout<<"ManagementAlgorithm::ProcessSensorLocUpdate called with param:"<<rom<<std::endl;
+
     //Call algorithm module
     ret = m_alg_ptr->PrepareForModelConstruction(rom,required_model_quality);
     return ret;
@@ -80,12 +84,14 @@ int ManagementAlgorithm::StopUdatingLoc()
     //Pseudo code
 
     m_thread_id = 0;
-    return 1;
+    return 0;
 }
 
 CloudQueryAnswer ManagementAlgorithm::QueryCloud(CloudQuery clq, Region_Of_Mission rom)
 {
     //This function is used to find out the last updated date & time of a specific ROM
+
+    return 0;
 
 }
 
@@ -113,6 +119,8 @@ bool ManagementAlgorithm::LoadOrthophoto(Region_Of_Mission rom)
     //This method connects to the cloud and brings the model.
     // When model is ready, signal to the algorithm module.
     // with method or message OrthoReady()
+    return true;
+
 }
 
 bool ManagementAlgorithm::LoadWPSModel(Region_Of_Mission rom)
@@ -121,5 +129,6 @@ bool ManagementAlgorithm::LoadWPSModel(Region_Of_Mission rom)
     //This method connects to the cloud and brings the model.
     // When model is ready, signal to the algorithm module.
     // with method or message WPS_Ready()
+    return true;
 }
 

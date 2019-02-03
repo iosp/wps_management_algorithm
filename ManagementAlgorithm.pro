@@ -34,10 +34,20 @@ HEADERS += \
 INCLUDEPATH += \
         $$algoPath
 
-LIBS += -L$$algoPath/lib/$$conf -lAlgorithmSubSystem
-DEPENDPATH += $$algoPath/lib/$$conf
-message($$algoPath/lib/$$conf)
-unix {
-    target.path = /usr/lib
-    INSTALLS += target
-}
+#LIBS += -L$$algoPath/lib/$$conf -lAlgorithmSubSystem
+#DEPENDPATH += $$algoPath/lib/$$conf
+#message($$algoPath/lib/$$conf)
+#unix {
+#    target.path = /usr/lib
+#    INSTALLS += target
+#}
+
+
+
+
+unix:!macx: LIBS += -L$$PWD/../AlgorithmSubSystem/lib/release/ -lAlgorithmSubSystem
+
+#INCLUDEPATH += $$PWD/../AlgorithmSubSystem/lib
+#DEPENDPATH += $$PWD/../AlgorithmSubSystem/lib
+
+unix:!macx: PRE_TARGETDEPS += $$PWD/../AlgorithmSubSystem/lib/$$conf/libAlgorithmSubSystem.a
