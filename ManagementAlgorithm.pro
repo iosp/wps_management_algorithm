@@ -45,7 +45,7 @@ INCLUDEPATH += \
 
 
 
-unix:!macx: LIBS += -L$$PWD/../AlgorithmSubSystem/lib/release/ -lAlgorithmSubSystem
+unix:!macx: LIBS += -L$$PWD/../AlgorithmSubSystem/lib/debug/ -lAlgorithmSubSystem
 
 #INCLUDEPATH += $$PWD/../AlgorithmSubSystem/lib
 #DEPENDPATH += $$PWD/../AlgorithmSubSystem/lib
